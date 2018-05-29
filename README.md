@@ -32,10 +32,16 @@ Add permisions and features.
 
 
 iOS implementation
+
 open ios .xcodeproj
+
 Add PhotoUtil.m & PotoUtil.h to the xcode project
+
 Righ click info.plist > Open As > Source Code
+
 Add the below usage descriptions
+
+...
 
 <plist version="1.0">
 <dict>
@@ -43,5 +49,6 @@ Add the below usage descriptions
   <string>Access to photo library to add pictures</string>
   <key>NSCameraUsageDescription</key>
   <string>Access to camera to take pictures and videos</string>
+  
   ...
 
