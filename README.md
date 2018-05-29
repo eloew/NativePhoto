@@ -1,4 +1,4 @@
-Android Implementaion
+**Android Implementaion**
 
 Open React Native android project in android studio
 
@@ -19,6 +19,7 @@ Add "new PhotoPackage()" line to the getPackages methoid:
 Open AndroidManifest.xml 
 Add permisions and features.
 
+,,,
 <manifest>
     ...
 
@@ -29,9 +30,9 @@ Add permisions and features.
     <uses-feature android:name="android.hardware.camera.autofocus" />
     
     ...
+,,,
 
-
-iOS implementation
+**iOS implementation**
 
 open ios .xcodeproj
 
@@ -49,3 +50,7 @@ Add the below usage descriptions:
   <key>NSCameraUsageDescription</key>
   <string>Access to camera to take pictures and videos</string>
   ```
+
+  **React Native Implementation**
+
+  See [App.js](https://github.com/eloew/NativePhoto/blob/master/App.js).
