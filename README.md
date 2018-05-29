@@ -1,4 +1,4 @@
-**Android Implementaion**
+#Android Implementaion
 
 Open React Native android project in android studio
 
@@ -20,7 +20,9 @@ Open AndroidManifest.xml
 Add permisions and features.
 
 ,,,
+
 <manifest>
+
     ...
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -28,11 +30,12 @@ Add permisions and features.
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-    
+
     ...
+
 ,,,
 
-**iOS implementation**
+#iOS implementation
 
 open ios .xcodeproj
 
@@ -51,6 +54,10 @@ Add the below usage descriptions:
   <string>Access to camera to take pictures and videos</string>
   ```
 
-  **React Native Implementation**
+#React Native Implementation
 
   See [App.js](https://github.com/eloew/NativePhoto/blob/master/App.js).
+
+  #TODO
+  iOS Camera needs to be finished
+  Android & iOS Video
