@@ -41,14 +41,9 @@ Righ click info.plist > Open As > Source Code
 
 Add the below usage descriptions
 
-...
-
 <plist version="1.0">
 <dict>
   <key>NSPhotoLibraryUsageDescription</key>
   <string>Access to photo library to add pictures</string>
   <key>NSCameraUsageDescription</key>
   <string>Access to camera to take pictures and videos</string>
-  
-  ...
-
