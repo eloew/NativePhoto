@@ -43,7 +43,7 @@ export default class App extends Component {
         this.setState({
           base64: data.base64,
         });
-        alert("base64: " + this.state.base64)
+        console.log("onGallery.base64: " + data.base64)
       })
       .catch((error) => {
         console.log(error)
@@ -79,12 +79,14 @@ export default class App extends Component {
         path: data.path
       });
 
-      photoUtil.toBase64(data.path)
+      alert(data.uri)
+
+      photoUtil.toBase64(data.uri)
       .then((data) => {
         this.setState({
           base64: data.base64,
         });
-        alert("base64: " + this.state.base64)
+        console.log("base64: " + this.state.base64)
       })
       .catch((error) => {
         console.log(error)

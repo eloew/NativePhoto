@@ -156,9 +156,11 @@ RCT_EXPORT_METHOD(showVideo:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromise
 }
 
 #pragma mark - base64
-
-- (NSString*)toBase64:(NSString *)input
-{
+RCT_EXPORT_METHOD(toBase64:(NSString *)input resolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+  
+  self.resolve = resolve;
+  self.reject = reject;
+  
   NSRange range = [input rangeOfString:@"/" options:NSBackwardsSearch];
   NSLog(@"a :: %d   ",range.location);
   NSString *fileName = [input substringFromIndex:range.location + 1];
@@ -170,9 +172,7 @@ RCT_EXPORT_METHOD(showVideo:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromise
   NSLog(@"5  %@ " , imageData);
   // Convert to base64 encoded string
   NSString *base64Encoded = [imageData base64EncodedStringWithOptions:0];
-  NSLog(@"6  %@" , base64Encoded);
-  return base64Encoded;
-  
+
   /*
    NSLog(@"input = %@", input);
    NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:input]];
@@ -180,6 +180,8 @@ RCT_EXPORT_METHOD(showVideo:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromise
    UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
    NSLog(@"thumbNail = %@", thumbNail);
    */
+  
+  [self promiseBase64:base64Encoded];
 }
 
 - (UIImage*)loadImage:(NSString *)input
@@ -233,14 +235,19 @@ RCT_EXPORT_METHOD(showVideo:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromise
   }
 }
 
-//[array insertObject:obj atIndex:index];
 - (void)promiseFilePath:(RCTPromiseResolveBlock)resolve absolutePath:(NSString *)absolutePath  {
-  
-  //NSString* base64 = [self toBase64: absolutePath];
   
   resolve(@{
             @"uri": absolutePath,
-            @"base64": @""
+            @"selectedUri": absolutePath,
+            @"path": absolutePath
+            });
+}
+
+- (void)promiseBase64:(NSString *)base64  {
+  //NSLog(@"promiseBase64.base65: %@   ", base64);
+  self.resolve(@{
+            @"base64": base64
             });
 }
 
