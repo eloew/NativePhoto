@@ -1,4 +1,4 @@
-#Android Implementaion
+# Android Implementaion
 
 Open React Native android project in android studio
 
@@ -19,8 +19,6 @@ Add "new PhotoPackage()" line to the getPackages methoid:
 Open AndroidManifest.xml 
 Add permisions and features.
 
-,,,
-
 <manifest>
 
     ...
@@ -33,9 +31,8 @@ Add permisions and features.
 
     ...
 
-,,,
 
-#iOS implementation
+# iOS implementation
 
 open ios .xcodeproj
 
@@ -58,6 +55,7 @@ Add the below usage descriptions:
 
   See [App.js](https://github.com/eloew/NativePhoto/blob/master/App.js).
 
-  #TODO
+  # TODO
   iOS Camera needs to be finished
+  
   Android & iOS Video
