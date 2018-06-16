@@ -238,7 +238,7 @@ RCT_EXPORT_METHOD(toBase64:(NSString *)input resolve:(RCTPromiseResolveBlock)res
 - (void)promiseFilePath:(RCTPromiseResolveBlock)resolve absolutePath:(NSString *)absolutePath  {
   
   resolve(@{
-            @"uri": absolutePath,
+            @"uri": absolutePath, 
             @"selectedUri": absolutePath,
             @"path": absolutePath
             });
